@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const sourceMapSupport = require("source-map-support");
+// import * as sourceMapSupport from "source-map-support";
 const util_1 = require("util");
 const core = require("@actions/core");
 const exec = require("@actions/exec");
 const setup_python_1 = require("./python-scripts/setup-python");
-sourceMapSupport.install();
+// sourceMapSupport.install();
 // Fetch action inputs
 const inputs = {
     token: core.getInput("token"),
