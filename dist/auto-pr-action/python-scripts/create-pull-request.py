@@ -81,7 +81,7 @@ def update_pull_request(github_token, github_repository,
     patch_url = "https://api.github.com/repos/{}/pulls/{}".format(
         github_repository, pr_number)
     resp = requests.patch(patch_url, auth=(
-        github_token), json=payload)
+        'dandu1008', github_token), json=payload)
     print(resp)
     return resp
 
