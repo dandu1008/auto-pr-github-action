@@ -1,4 +1,3 @@
-import "module-alias/register";
 import "source-map-support/register";
 
 import * as sourceMapSupport from "source-map-support";
@@ -53,7 +52,7 @@ async function run() {
     const src = __dirname + "/python-scripts";
     core.debug(`src: ${src}`);
     // Setup Python from the tool cache
-    setupPython("3.8.0", "x64");
+    await setupPython("3.8.0", "x64");
     // Install requirements
     await exec.exec("pip", ["install", "--requirement", `${src}/requirements.txt`]);
     core.debug(`Inputs: ${inspect(inputs)}`);

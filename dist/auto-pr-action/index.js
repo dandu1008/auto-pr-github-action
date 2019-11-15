@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("module-alias/register");
 require("source-map-support/register");
 const sourceMapSupport = require("source-map-support");
 const util_1 = require("util");
@@ -63,7 +62,7 @@ async function run() {
         const src = __dirname + "/python-scripts";
         core.debug(`src: ${src}`);
         // Setup Python from the tool cache
-        setup_python_1.setupPython("3.8.0", "x64");
+        await setup_python_1.setupPython("3.8.0", "x64");
         // Install requirements
         await exec.exec("pip", ["install", "--requirement", `${src}/requirements.txt`]);
         core.debug(`Inputs: ${util_1.inspect(inputs)}`);

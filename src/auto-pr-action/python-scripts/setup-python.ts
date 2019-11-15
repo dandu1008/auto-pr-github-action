@@ -42,5 +42,3 @@ export const setupPython = function(versionSpec: string, arch: string) {
     resolve();
   });
 };
-
-module.exports = setupPython;
