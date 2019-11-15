@@ -1,9 +1,12 @@
+import * as sourceMapSupport from "source-map-support";
 import { inspect } from "util";
 
 import * as core from "@actions/core";
 import * as exec from "@actions/exec";
 
 import { setupPython } from "./python-scripts/setup-python";
+
+sourceMapSupport.install();
 
 // Fetch action inputs
 const inputs = {
