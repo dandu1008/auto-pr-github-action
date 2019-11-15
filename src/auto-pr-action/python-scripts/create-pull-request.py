@@ -127,6 +127,7 @@ def process_event(github_token, github_repository, branch, base, pusher_name, re
                     "state": 'open',
                     "base": base,
                 }
+                print(payload)
                 try:
                     update_pr = update_pull_request(
                         pusher_name, github_token, repo_owner, github_repository, pull_request.number, payload)
