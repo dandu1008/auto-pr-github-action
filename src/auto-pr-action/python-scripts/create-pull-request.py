@@ -80,9 +80,9 @@ def update_pull_request(github_token, github_repository,
                         pr_number, payload):
     patch_url = "https://api.github.com/repos/{}/pulls/{}".format(
         github_repository, pr_number)
-    print(patch_url)
     resp = requests.patch(patch_url, auth=(
         github_token), json=payload)
+    print(resp)
     return resp
 
 
@@ -129,16 +129,12 @@ def process_event(github_token, github_repository, branch, base):
                     "state": 'open',
                     "base": base,
                 }
-                print(payload)
                 try:
-                    update_pr = update_pull_request(
+                    update_pull_request(
                         github_token, github_repository, pull_request.number, payload)
-                    print(update_pr)
-                    if update_pr and 'message' in update_pr.keys() and update_pr['message'] == "Not Found":
-                        print(update_pr.json())
-                        sys.exit(1)
+                    print("test1")
                 except Exception as e:
-                    print(e)
+                    print(str(e))
                     sys.exit(1)
             print("Updated pull request #%d (%s => %s)" %
                   (pull_request.number, branch, base))
