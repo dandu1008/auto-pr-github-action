@@ -133,8 +133,8 @@ def process_event(github_token, github_repository, branch, base):
                 try:
                     update_pr = update_pull_request(
                         github_token, github_repository, pull_request.number, payload)
-                    print(update_pr.json())
-                    if update_pr and update_pr['message'] == "Not Found":
+                    print(update_pr)
+                    if update_pr and 'message' in update_pr.keys() and update_pr['message'] == "Not Found":
                         print(update_pr.json())
                         sys.exit(1)
                 except Exception as e:
