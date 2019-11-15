@@ -132,7 +132,6 @@ def process_event(github_token, github_repository, branch, base, user):
                 try:
                     update_pull_request(
                         github_token, github_repository, pull_request.number, payload, user)
-                    print("test1")
                 except Exception as e:
                     print(str(e))
                     sys.exit(1)
