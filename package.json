@@ -27,6 +27,7 @@
     "@actions/tool-cache": "^1.1.2",
     "git": "^0.1.5",
     "github": "^14.0.0",
+    "mime": "^1.4.1",
     "node-fetch": "^2.4.1",
     "source-map-support": "^0.5.10",
     "uuid": "^3.3.2",
