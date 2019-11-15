@@ -130,6 +130,7 @@ def process_event(github_token, github_repository, branch, base, pusher_name, re
                 try:
                     update_pr = update_pull_request(
                         pusher_name, github_token, repo_owner, github_repository, pull_request.number, payload)
+                    print(update_pr.json())
                     if update_pr and update_pr['message'] == "Not Found":
                         print(update_pr.json())
                         sys.exit(1)
