@@ -20,6 +20,6 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "src/**/*.test.ts", "dist"],
+  "exclude": ["node_modules", "src/**/*.test.ts"],
   "include": ["src/**/*.ts"]
 }

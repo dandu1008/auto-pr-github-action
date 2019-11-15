@@ -15,7 +15,10 @@
   "python.linting.pylintArgs": [
     "--disable=wrong-import-order,ungrouped-imports,missing-docstring,wrong-import-position,import-error"
   ],
-  "python.autoComplete.extraPaths": ["python_apps/python_modules"]
+  "python.autoComplete.extraPaths": [
+    "python_apps/python_modules"
+  ],
+  "git.ignoreLimitWarning": true
   // "python.pythonPath": "${env:PYTHON_INSTALL_LOC}"
   // "python.linting.pylintArgs": ["--errors-only"]
   // "python.linting.pylintArgs": ["--reports", "12", "--disable-msg", "I0011"]

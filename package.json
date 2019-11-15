@@ -13,6 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/dandu1008/auto-pr-github-action.git"
   },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
   "scripts": {
     "upgrade_modules": "yarn upgrade-interactive",
     "build": "tsc && yarn run copy-py-scripts",
