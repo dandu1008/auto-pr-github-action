@@ -17,7 +17,7 @@
     "upgrade_modules": "yarn upgrade-interactive",
     "build": "tsc && yarn run copy-py-scripts",
     "watch": "tsc -w",
-    "copy-py-scripts": "cd src/ && find . -name \"*.py\" -or -name \"*.txt\" | tar -cf - -T - | (mkdir -p ../dist && cd ../dist && tar -xf - ) && cd -",
+    "copy-py-scripts": "cd src/ && find . -name \"*.py\" -or -name \"*.txt\" -or -name \"*.yml\" | tar -cf - -T - | (mkdir -p ../dist && cd ../dist && tar -xf - ) && cd -",
     "distclean": "rm -rf dist/ coverage/ package.zip node_modules/",
     "lint": "tslint --project tsconfig.json --config tslint.json './src/**/*.ts' -e 'node_modules/**'"
   },
