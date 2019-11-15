@@ -122,6 +122,7 @@ def process_event(github_token, github_repository, branch, base):
     os.system(
         'echo ::set-output name=pr_number::%d' %
         pull_request.number)
+    print("Created pull request:" + str(os.environ['PULL_REQUEST_NUMBER']))
 
     # Set labels, assignees and milestone
     if pull_request_labels is not None:
