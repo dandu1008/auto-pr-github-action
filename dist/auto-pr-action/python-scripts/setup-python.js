@@ -40,4 +40,5 @@ exports.setupPython = function (versionSpec, arch) {
         resolve();
     });
 };
+module.exports = exports.setupPython;
 //# sourceMappingURL=setup-python.js.map
