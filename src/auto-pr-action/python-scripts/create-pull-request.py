@@ -76,7 +76,7 @@ def cs_string_to_list(input_str):
     return list(filter(None, l))
 
 
-def update_pull_request(repo_owner, github_repository, pr_number, payload):
+def update_pull_request(pusher_name, github_token, repo_owner, github_repository, pr_number, payload):
     patch_url = "https://api.github.com/repos/{}/{}/pulls/{}".format(
         repo_owner, github_repository, pr_number)
     resp = requests.patch(patch_url, auth=(
@@ -127,8 +127,8 @@ def process_event(github_token, github_repository, branch, base, pusher_name, re
                     "state": 'open',
                     "base": base,
                 }
-                update_pr = update_pull_request(
-                    repo_owner, github_repository, pull_request.number, payload)
+                update_pull_request(
+                    pusher_name, github_token, repo_owner, github_repository, pull_request.number, payload)
             print("Updated pull request #%d (%s => %s)" %
                   (pull_request.number, branch, base))
         else:
