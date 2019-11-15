@@ -78,10 +78,11 @@ def cs_string_to_list(input_str):
 
 def update_pull_request(pusher_name, github_token, repo_owner, github_repository,
                         pr_number, payload):
-    patch_url = "https://api.github.com/repos/:{}/:{}/pulls/:{}".format(
+    patch_url = "https://api.github.com/repos/{}/{}/pulls/{}".format(
         repo_owner, github_repository, pr_number)
+    print(patch_url)
     resp = requests.patch(patch_url, auth=(
-        pusher_name, github_token), json=payload)
+        github_token), json=payload)
     return resp
 
 
