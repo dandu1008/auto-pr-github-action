@@ -82,7 +82,7 @@ def update_pull_request(github_token, github_repository,
         github_repository, pr_number)
     resp = requests.patch(patch_url, auth=(
         user, github_token), json=payload)
-    print(resp)
+    print(resp.json())
     return resp
 
 
