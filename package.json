@@ -1,0 +1,52 @@
+{
+  "name": "auto-pr-github-action",
+  "version": "1.0.0",
+  "description": "DC custom github actions",
+  "private": false,
+  "engineStrict": true,
+  "license": "MIT",
+  "engines": {
+    "node": "*",
+    "yarn": "^1.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandu1008/auto-pr-github-action.git"
+  },
+  "scripts": {
+    "upgrade_modules": "yarn upgrade-interactive",
+    "build": "tsc && yarn run copy-py-scripts",
+    "watch": "tsc -w",
+    "copy-py-scripts": "cd src/ && find . -name \"*.py\" -or -name \"*.txt\" | tar -cf - -T - | (mkdir -p ../dist && cd ../dist && tar -xf - ) && cd -",
+    "distclean": "rm -rf dist/ coverage/ package.zip node_modules/",
+    "lint": "tslint --project tsconfig.json --config tslint.json './src/**/*.ts' -e 'node_modules/**'"
+  },
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.1",
+    "@actions/tool-cache": "^1.1.2",
+    "git": "^0.1.5",
+    "github": "^14.0.0",
+    "node-fetch": "^2.4.1",
+    "source-map-support": "^0.5.10",
+    "uuid": "^3.3.2",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^10.14.12",
+    "@types/node-fetch": "^2.3.3",
+    "@types/semver": "^5.4.1",
+    "@types/sinon": "^7.0.11",
+    "@types/source-map-support": "^0.4.1",
+    "@types/uuid": "^3.4.5",
+    "jest": "^24.8.0",
+    "sinon": "^7.3.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.3"
+  }
+}

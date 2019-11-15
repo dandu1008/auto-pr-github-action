@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "no-angle-bracket-type-assertion": false,
+    "no-console": false,
+    "no-implicit-dependencies": false,
+    "await-promise": [true, "Bluebird"]
+  }
+}

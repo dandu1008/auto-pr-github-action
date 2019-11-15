@@ -1,0 +1,14 @@
+node_modules/
+coverage/
+dist/
+.vs/
+**/.DS_Store
+.env
+.env.*
+*.zip
+.idea
+/package/
+.sonarlints
+*~
+.metals
+*yarn-error.log

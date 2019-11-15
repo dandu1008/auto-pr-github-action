@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "html.format.enable": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "importSorter.importStringConfiguration.quoteMark": "double",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 300,
+  "python.formatting.autopep8Args": ["--ignore", "E402"],
+  "python.jediEnabled": true,
+  "python.linting.pylintArgs": [
+    "--disable=wrong-import-order,ungrouped-imports,missing-docstring,wrong-import-position,import-error"
+  ],
+  "python.autoComplete.extraPaths": ["python_apps/python_modules"]
+  // "python.pythonPath": "${env:PYTHON_INSTALL_LOC}"
+  // "python.linting.pylintArgs": ["--errors-only"]
+  // "python.linting.pylintArgs": ["--reports", "12", "--disable-msg", "I0011"]
+}
