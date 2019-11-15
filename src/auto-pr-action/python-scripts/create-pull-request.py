@@ -112,7 +112,6 @@ def process_event(github_token, github_repository, branch, base, user):
         print("Created pull request #%d (%s => %s)" %
               (pull_request.number, branch, base))
     except GithubException as e:
-        print(e)
         if e.status == 422:
             # Format the branch name
             head_branch = "%s:%s" % (github_repository.split("/")[0], branch)
@@ -121,7 +120,6 @@ def process_event(github_token, github_repository, branch, base, user):
                 state='open',
                 base=base,
                 head=head_branch)[0]
-            print(pull_request)
             if pull_request.number:
                 payload = {
                     "title": title,
