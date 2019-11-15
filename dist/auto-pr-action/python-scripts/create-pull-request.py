@@ -120,6 +120,7 @@ def process_event(github_token, github_repository, branch, base, pusher_name, re
                 state='open',
                 base=base,
                 head=head_branch)[0]
+            print(pull_request)
             if pull_request.number:
                 payload = {
                     "title": title,
